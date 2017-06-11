@@ -37,12 +37,14 @@ public class WalkThroughPage4 extends Fragment {
             in.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation animation) {
+                    if (!isAdded()) return;
                     mMessage.setText(getString(R.string.stay_notified));
 
                 }
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
+                    if (!isAdded()) return;
                     mMessage.setText(getString(R.string.shop_fashion_like_pro));
                 }
 
