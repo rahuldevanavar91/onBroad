@@ -35,7 +35,7 @@ public class WalkThroughPage3 extends Fragment {
         if (isVisibleToUser) {
             mScrollView.clearAnimation();
             ObjectAnimator.ofInt(mScrollView, "scrollY", mScrollView.getChildAt(0).getHeight()).setDuration(10000).start();
-            Animation fadeIn = new AlphaAnimation(0,1);
+            Animation fadeIn = new AlphaAnimation(0, 1);
             fadeIn.setDuration(1000);
             fadeIn.setStartOffset(500);
             mMessage.setAnimation(fadeIn);

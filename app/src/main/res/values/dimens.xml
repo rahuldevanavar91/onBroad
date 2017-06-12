@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_15dp">15dp</dimen>
+    <dimen name="_120dp">120dp</dimen>
+    <dimen name="_160dp">160dp</dimen>
+    <dimen name="_270dp">270dp</dimen>
+    <dimen name="_50dp">50dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_140dp">140dp</dimen>
+    <dimen name="_220dp">220dp</dimen>
+    <dimen name="_180dp">180dp</dimen>
+    <dimen name="_125dp">125dp</dimen>
+    <dimen name="_210dp">210dp</dimen>
+    <dimen name="_110dp">110dp</dimen>
+    <dimen name="_60dp">60dp</dimen>
+    <dimen name="_260dp">260dp</dimen>
+    <dimen name="_130dp">130dp</dimen>
+    <dimen name="_170dp">170dp</dimen>
+    <dimen name="_240dp">240dp</dimen>
+</resources>

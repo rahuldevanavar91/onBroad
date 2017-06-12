@@ -29,7 +29,24 @@ public class WalkThroughPage1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.walk_through_page1_layout, container, false);
         getWidgets(view);
+        setText();
         return view;
+    }
+
+    private void setText() {
+        mHandler = new Handler();
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (!isAdded()) return;
+                Animation slideUp = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down);
+                mHookLayout.startAnimation(slideUp);
+                mHookLayout.setVisibility(View.VISIBLE);
+                Animation fadeIn = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
+                mMessage.setAnimation(fadeIn);
+                mMessage.setVisibility(View.VISIBLE);
+            }
+        }, 1500);
     }
 
     private void getWidgets(View view) {
@@ -37,28 +54,12 @@ public class WalkThroughPage1 extends Fragment {
         mMessage = (TextView) view.findViewById(R.id.message);
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        if (isVisibleToUser) {
-            mHandler = new Handler();
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    if (!isAdded()) return;
-                    Animation slideUp = AnimationUtils.loadAnimation(getContext(), R.anim.slide_down);
-                    mHookLayout.startAnimation(slideUp);
-                    mHookLayout.setVisibility(View.VISIBLE);
-                    Animation fadeIn = AnimationUtils.loadAnimation(getContext(), R.anim.fade_in);
-                    mMessage.setAnimation(fadeIn);
-                    mMessage.setVisibility(View.VISIBLE);
-                }
-            }, 1500);
-        }
-    }
 
     @Override
     public void onStop() {
-        mHandler.removeMessages(0);
+        if (mHandler != null) {
+            mHandler.removeMessages(0);
+        }
         super.onStop();
     }
 }

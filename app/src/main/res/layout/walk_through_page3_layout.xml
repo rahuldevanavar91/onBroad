@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/slide3_img">
@@ -9,17 +10,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginRight="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_40dp"
         android:background="?selectableItemBackground"
         android:onClick="onClick"
-        android:padding="10dp"
+        android:padding="@dimen/_10dp"
         android:text="Skip"
         android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textSize="@dimen/_15dp" />
 
     <ImageView
-        android:id="@+id/iamge_1"
+        android:id="@+id/image_1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
@@ -27,17 +28,20 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="140dp"
-        android:layout_height="220dp"
+        android:layout_width="@dimen/_160dp"
+        android:layout_height="@dimen/_270dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_heightPercent="44.5%"
+        app:layout_marginTopPercent="19%"
+        app:layout_widthPercent="44.5%">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/dicover_scroll" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/discover_scroll"
+            android:hardwareAccelerated="false" />
     </ScrollView>
 
     <TextView
@@ -46,10 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="@dimen/_50dp"
         android:gravity="center"
         android:text="@string/shoppable_edits_served"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="@dimen/_20dp"
         android:visibility="gone" />
-</RelativeLayout>
+</android.support.percent.PercentRelativeLayout>
